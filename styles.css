@@ -1,0 +1,10 @@
+.center-text {
+    text-align: center;
+}
+
+.complete-center {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    text-align: center;
+}

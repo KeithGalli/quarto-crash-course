@@ -1,0 +1,119 @@
+---
+title: "Quarto Crash Course"
+subtitle: "Publishing Websites, Dashboards, Documents, and More with Code!"
+author: "Keith Galli"
+date: "2024-11-05"
+format: revealjs
+css: styles.css
+---
+
+# Live Stream Agenda
+
+## Agenda
+
+::: {.incremental}
+- Why use Quarto? (5 mins)
+- Installation & Setup (5 mins)
+- Markdown Basics (5 mins)
+- Quarto Markdown Features & Visual Editor (10 mins)
+- Publishing (5 mins)
+- Hands-on Learning (1 hour)
+- Automation & Advanced Topics (30 mins)
+:::
+
+## Hands-on Learning
+Exploring the various output formats with real-world examples.
+
+::: {.incremental}
+- HTML Websites
+- PDF & Word Documents
+- Dashboards
+- Slideshows
+:::
+
+## Access the Code
+::: {.fragment .fade-in}
+All the code for this presentation is available on GitHub.
+**https://github.com/KeithGalli/quarto-crash-course**
+:::
+
+## Thank You to Posit Connect Cloud for Sponsoring!
+
+::: {.fragment .fade-in}
+Easily deploy & share your Quarto projects with Posit Connect Cloud (more details later in the video)
+:::
+
+:::: {.columns}
+
+![](https://connect.posit.cloud/d103aef8b61d87477c20.svg){fig-align="center"}
+
+::::
+
+# Why Use Quarto?
+
+## Communication
+
+:::: {.columns}
+
+::: {.column width="25%" .fragment .fade-in fragment-index=1}
+<br/>
+Normal workflow for Data Scientists (Notebook, Code, Etc.)
+:::
+
+::: {.column width="50%" fig-align="center" .fragment .fade-in fragment-index=3 .center-text}
+Quarto
+![](./assets/Epic-Handshake.jpg)
+:::
+
+::: {.column width="25%" .fragment .fade-in fragment-index=2}
+<br/>
+Presentation format for business Stakeholders (Slides, PDF, Dashboards)
+:::
+
+::::
+
+# Gallery
+
+## HTML & HTML Websites
+
+::: {.r-stack}
+![](./assets/website-example1.png){.fragment .fade-in-then-out}
+
+![](./assets/website-example2.png){.fragment .fade-in-then-out}
+:::
+
+## PDF & Word Documents
+
+::: {layout-ncol=2}
+
+![Tutorial Link in Description!](./assets/analytic-reports-thumbnail.jpg){fig-caption="Analytic Reports"}
+
+![](./assets/USA.jpg)
+
+:::
+
+## Dashboards
+
+![](./assets/dashboard-example.png)
+
+## Slideshows
+
+::: {.complete-center .fragment .fade-in fragment-index=3}
+This one
+:::
+
+![](./assets/selfies/point-right1.png){.absolute top=50 left=50 .fragment .fade-in fragment-index=1}
+
+![](./assets/selfies/thumbs-up.png){.absolute botton=0 right=50 .fragment .fade-in fragment-index=2}
+
+# Installation & Setup
+
+# Markdown Basics
+
+# Quarto Markdown Features & Visual Editor
+
+# Publishing
+
+# Hands-on Learning
+
+# Automation & Advanced Topics
