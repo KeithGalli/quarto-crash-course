@@ -1,0 +1,47 @@
+---
+title: Quarto Crash Course
+subtitle: From Beginner to Advanced
+format:
+  html:
+    code-fold: true
+author: Keith Galli
+engine: jupyter
+bibliography: references.bib
+---
+
+```{python}
+#| tags: [parameters]
+#| echo: True
+from IPython.display import Markdown
+
+region = "North America"
+```
+
+# Overview
+
+In this tutorial you will learn all about publishing various types of content with Quarto.
+
+## Getting Started
+
+-   Markdown Basics
+-   Visual Editor
+-   Metadata Yaml (https://quarto.org/docs/reference/)
+-   Code Chunks
+
+## Markdown Basics
+
+$$
+\frac{5}{x^2+4} = \int_0^1 e^x dx
+$$
+
+## Variables
+
+### Region: `{python} region`
+
+This analysis focuses on `{python} Markdown(f"**{region}**")`.
+
+## Misc
+
+this is a blockquote test
+
+> Yyosdfasdf
