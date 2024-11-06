@@ -1,0 +1,31 @@
+---
+format: revealjs
+title: "Slideshow Example"
+echo: true
+---
+
+# Overview
+
+## Show Code
+
+``` {python}
+def example_function(a):
+    if a > 0:
+        return "A is positive!"
+    elif a < 0:
+        return "A is negative!"
+    else:
+        return "A is zero!"
+```
+
+## Show Code with Walkthrough
+
+``` {.python code-line-numbers="1|2-3|4-5|6-7|1-7"}
+def example_function(a):
+    if a > 0:
+        return "A is positive!"
+    elif a < 0:
+        return "A is negative!"
+    else:
+        return "A is zero!"
+```
