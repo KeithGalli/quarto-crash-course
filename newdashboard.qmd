@@ -1,0 +1,76 @@
+---
+format: dashboard
+title: "Movie Analysis Dashboard"
+orientation: columns
+---
+
+# Comedy
+
+## Row
+
+Hello world
+
+## Row
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Generate random data
+x = np.random.rand(100)
+y = np.random.rand(100)
+
+# Create scatter plot
+plt.scatter(x, y)
+# plt.title("Random Scatter Plot")
+# plt.xlabel("X-axis")
+# plt.ylabel("Y-axis")
+plt.show()
+```
+
+```{python}
+print("RANOMD TEXT")
+```
+
+```{python}
+#| title: Comedy Vote Average Distribution
+print("RANOMD TEXT")
+```
+
+# Drama
+
+## Column
+
+```{python}
+#| component: valuebox
+#| title: Number of Drama Movies
+dict(
+    icon = "flag",
+    color = "#ff8080",
+    value = 175,
+)
+```
+
+```{python}
+#| component: valuebox
+#| title: Number of Drama Movies
+dict(
+    icon = "film",
+    color = "#ff8080",
+    value = 175,
+)
+```
+
+```{python}
+#| component: valuebox
+#| title: Number of Drama Movies
+dict(
+    icon = "film",
+    color = "#ff8080",
+    value = 175,
+)
+```
+
+## Column
+
+Hello world

@@ -1,0 +1,81 @@
+---
+title: "Quarto Formatting & Styling"
+format: html
+# slide-number: true
+css: styles.css
+code-fold: false
+echo: true
+---
+
+# Slide one
+::: {.incremental}
+- Hello world
+:::
+
+## Slide two 
+```{python}
+#| echo: True
+#| code-fold: true
+def fizz_buzz(n):
+    if n % 3 == 0 and n % 5 == 0:
+        return "FizzBuzz"
+    elif n % 3 == 0:
+        return "Fizz"
+    elif n % 5 == 0:
+        return "Buzz"
+    else:
+        return n
+
+```
+
+## Slide three {.yoyoyo aria-label="Slide three"}
+```{python}
+def compare(a, b):
+    if a > b:
+        return "a is greater than b"
+    elif a < b:
+        return "a is less than b"
+    else:
+        return "a is equal to b"
+```
+
+## Slide four
+::: {layout="[[30, 70], [100]]"}
+![](https://upload.wikimedia.org/wikipedia/en/4/4d/Shrek_%28character%29.png){width="100%" alt="THIS IS SOME ALT TEXT"}
+
+![](https://static01.nyt.com/images/2010/05/16/arts/16shrek-span/16shrek-span-articleLarge.jpg){width="300px" height="10px"}
+
+This is another paragraph of text, but in a different column/row
+:::
+
+## Slide five
+```{python}
+from great_tables import GT, html
+from great_tables.data import sza
+import polars as pl
+import polars.selectors as cs
+
+sza_pivot = (
+    pl.from_pandas(sza)
+    .filter((pl.col("latitude") == "20") & (pl.col("tst") <= "1200"))
+    .select(pl.col("*").exclude("latitude"))
+    .drop_nulls()
+    .pivot(values="sza", index="month", on="tst", sort_columns=True)
+)
+
+(
+    GT(sza_pivot, rowname_col="month")
+    .data_color(
+        domain=[90, 0],
+        palette=["rebeccapurple", "white", "orange"],
+        na_color="white",
+    )
+    .tab_header(
+        title="Solar Zenith Angles from 05:30 to 12:00",
+        subtitle=html("Average monthly values at latitude of 20&deg;N."),
+    )
+    .sub_missing(missing_text="")
+)
+```
+
+
