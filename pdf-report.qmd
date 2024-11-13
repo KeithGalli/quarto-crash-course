@@ -5,6 +5,7 @@ format:
     pdf: default
 echo: false
 styles: styles.css
+toc: true
 ---
 
 ## Overview
@@ -20,6 +21,7 @@ df = pd.read_csv("./data/TMDB-Small.csv")
 
 #df.head()
 ```
+{{< pagebreak >}}
 
 ## Distribution by year
 ```{python}
@@ -61,6 +63,7 @@ fig.show()
 create_keyword_wordcloud(df)
 ```
 
+{{< pagebreak >}}
 
 ## Genre Distribution
 
