@@ -1,2 +1,12 @@
 project:
+  type: website
   output-dir: _output
+
+website:
+  title: "today"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - presentation.qmd
+      - html-report.qmd
