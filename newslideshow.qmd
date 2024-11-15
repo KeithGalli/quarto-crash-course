@@ -1,0 +1,39 @@
+---
+format: revealjs
+title: "My first slideshow"
+author: "Keith Galii"
+theme: "dark"
+echo: true
+code-line-numbers: false
+---
+
+# Title Slides
+
+## Section Slide
+
+## Section slide 2
+
+```{.python code-line-numbers="1|3-4|1-4"}
+import random
+
+for i in range(10):
+    print(random.randint(1, 100))
+
+```
+
+## Lists
+
+::: {.incremental}
+- show items one
+- at a time
+- with incremental
+- list
+:::
+
+## Image fragments
+
+![](https://upload.wikimedia.org/wikipedia/en/4/4d/Shrek_%28character%29.png){.fragment .fade-in fragment-index=2}
+
+![](https://upload.wikimedia.org/wikipedia/en/4/4d/Shrek_%28character%29.png){.fragment .fade-in fragment-index=1 .absolute top=50 left=500}
+
+![](https://upload.wikimedia.org/wikipedia/en/4/4d/Shrek_%28character%29.png){.fragment .fade-in fragment-index=2 .absolute top=50 left=50 width=500px}

@@ -1,0 +1,79 @@
+---
+format: dashboard
+title: "My new dashboard"
+orientation: columns
+---
+```{python}
+import pandas as pd
+from pathlib import Path
+
+file_path = './data/TMDB-Small.csv'
+df = pd.read_csv(file_path)
+```
+
+# Comedy
+
+## Row
+
+```{python}
+#| content: valuebox
+#| title: "Number of Movies"
+dict(
+    icon = "currency-dollar",
+    color = "secondary",
+    value = len(df)
+)
+```
+
+```{python}
+#| content: valuebox
+#| title: "Average Rating"
+dict(
+    icon = "flag",
+    color = "secondary",
+    value = f"{df['vote_average'].mean():.2f}"
+)
+```
+
+```{python}
+#| content: valuebox
+#| title: "Current Price"
+dict(
+    icon = "envelope",
+    color = "secondary",
+    value = 255
+)
+```
+
+## Row
+
+```{python}
+#| title: "Revenue vs Budget"
+from helpers import plot_revenue_vs_budget
+
+plot_revenue_vs_budget(df)
+```
+```{python}
+import plotly.express as px
+
+df['primary_genre'] = df['genres'].str.split(',').str[0].str.strip()
+
+fig = px.scatter(df, x='vote_count', y='vote_average', hover_data=['title'], color='primary_genre', title='Vote Count vs Vote Average')
+fig.show()
+```
+
+
+## Row
+
+```{python}
+import plotly.express as px
+
+df['primary_genre'] = df['genres'].str.split(',').str[0].str.strip()
+
+fig = px.scatter(df, x='vote_count', y='vote_average', hover_data=['title'], color='primary_genre', title='Vote Count vs Vote Average')
+fig.show()
+```
+
+# Horror
+
+Content here

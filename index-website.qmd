@@ -1,0 +1,12 @@
+---
+title: Example Quarto Website
+author: Keith Galli
+date: '2024-11-12'
+echo: false
+bibliography: references.bib
+
+---
+
+## Welcome to my website!
+
+Here you can find some Quarto examples!
