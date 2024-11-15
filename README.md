@@ -1,6 +1,7 @@
 # Quarto Crash Course
+<img src="https://github.com/user-attachments/assets/6aa80d6c-fb2c-4084-be5c-6f6b85c56959" width="40%">
 
-This repository contains source materials related to my live stream and Posit tutorial on Quarto.
+This repository contains source materials related to my [live stream](https://www.youtube.com/live/IawWadxgYfc?si=_6t43ECjQKSs8Isj) and [Posit tutorial](https://youtu.be/_VKxTPWDhA4?si=pwEuFcN0FPfixGZU) on Quarto.
 
 Quarto is an open-source technical publication system that allows you to use a combination of Markdown & Python (or R, Julia, or Observable) code to easily produce websites, analytics dashboards, slideshows, and more.
 
