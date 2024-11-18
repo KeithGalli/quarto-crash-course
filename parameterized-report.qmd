@@ -3,6 +3,7 @@ title: "Top Movies"
 format: pdf
 echo: false
 margin-left: 0.5in
+toc: true
 ---
 ```{python}
 #| tags: [parameters]
@@ -23,14 +24,32 @@ top_movies = df_genre.sort_values('vote_average', ascending=False).head(num_movi
 
 # Genre: `{python} genre.capitalize()`
 
+## Rating Distribution
+
+```{python}
+#| fig-align: center
+#| fig-cap: "Rating Histogram"
+#| fig-cap-location: top
+import matplotlib.pyplot as plt
+
+plt.hist(df_genre['vote_average'], bins=10, edgecolor='black')
+plt.xlabel('Vote Average')
+plt.ylabel('Number of Movies')
+plt.show()
+```
+
+{{< pagebreak >}}
+
+## Top Movies
+
 ```{python}
 #| output: asis
 top_movies = top_movies.iloc[::-1]
 for index, row in top_movies.iterrows():
 
     url = f"https://image.tmdb.org/t/p/w600_and_h900_bestv2{row['poster_path']}"
-    print('::: {layout="[[100], [25,75]]"}')
-    print(f"## Number {index + 1} \n\n ")
+    print('::: {layout="[[100], [25,-10, 65]]"}')
+    print(f"### Number {index + 1} \n\n ")
     print(f"**{row['title']}** \n\n")
     print(f"![]({url}) \n\n")
     print(f"{row['overview']} \n\n")
