@@ -1,14 +1,13 @@
 ---
 title: "Top Movies"
 format: pdf
-echo: false
-margin-left: 0.5in
 toc: true
+echo: false
 ---
 ```{python}
 #| tags: [parameters]
 
-num_movies = 20
+num_movies = 5
 genre = "comedy"
 ```
 
@@ -19,40 +18,38 @@ df = pd.read_csv('./data/TMDB-Small.csv')
 df['primary_genre'] = df['genres'].str.split(',').str[0].str.strip().str.lower()
 
 df_genre = df[df['primary_genre'] == genre]
-top_movies = df_genre.sort_values('vote_average', ascending=False).head(num_movies).reset_index()
+top_movies = df_genre.sort_values('vote_average', ascending=False).head(num_movies)
 ```
 
-# Genre: `{python} genre.capitalize()`
+{{< pagebreak >}}
 
-## Rating Distribution
+## Ratings Distribution for `{python} genre.capitalize()`
 
 ```{python}
 #| fig-align: center
-#| fig-cap: "Rating Histogram"
-#| fig-cap-location: top
+#| fig-cap: "Rating Histogram for Genre"
+#| fig-cap-location: bottom
 import matplotlib.pyplot as plt
 
-plt.hist(df_genre['vote_average'], bins=10, edgecolor='black')
-plt.xlabel('Vote Average')
-plt.ylabel('Number of Movies')
+plt.hist(df_genre['vote_average'], bins=10, color='skyblue', edgecolor='black')
+plt.xlabel('Rating')
+plt.ylabel('Frequency')
 plt.show()
 ```
 
 {{< pagebreak >}}
 
-## Top Movies
+## Top Movies in `{python} genre.capitalize()`
 
 ```{python}
 #| output: asis
-top_movies = top_movies.iloc[::-1]
-for index, row in top_movies.iterrows():
-
-    url = f"https://image.tmdb.org/t/p/w600_and_h900_bestv2{row['poster_path']}"
-    print('::: {layout="[[100], [25,-10, 65]]"}')
-    print(f"### Number {index + 1} \n\n ")
-    print(f"**{row['title']}** \n\n")
+for i in range(num_movies-1,-1,-1):
+    movie = top_movies.iloc[i]
+    url = f"https://image.tmdb.org/t/p/w600_and_h900_bestv2{movie['poster_path']}"
+    print("::: {layout='[[100],[25,-10,65]]'} \n\n")
+    print(f"### Number {i+1} \n\n")
+    print(f"**Title: {movie['title']}** \n\n")
     print(f"![]({url}) \n\n")
-    print(f"{row['overview']} \n\n")
-    print('::: \n\n')
+    print(f"Description: {movie['overview']} \n\n")
+    print("::: \n\n")
 ```
-
