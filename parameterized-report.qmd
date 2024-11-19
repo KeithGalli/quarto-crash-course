@@ -1,0 +1,54 @@
+---
+title: "Top Movies"
+format: html
+echo: false
+---
+```{python}
+#| tags: [parameters]
+
+num_movies = 5
+genre = "comedy"
+```
+
+```{python}
+import pandas as pd
+
+df = pd.read_csv('./data/TMDB-Small.csv')
+df['primary_genre'] = df['genres'].str.split(',').str[0].str.strip().str.lower()
+
+df_genre = df[df['primary_genre'] == genre]
+top_movies = df_genre.sort_values('vote_average', ascending=False).head(num_movies)
+```
+
+# Top Movies in `{python} genre.capitalize()`
+
+
+## Number 5
+
+**`{python} top_movies.iloc[4].title`**
+
+`{python} top_movies.iloc[4].overview`
+
+## Number 4
+
+**`{python} top_movies.iloc[3].title`**
+
+`{python} top_movies.iloc[3].overview`
+
+## Number 3
+
+**`{python} top_movies.iloc[2].title`**
+
+`{python} top_movies.iloc[2].overview`
+
+
+## Number 2
+**`{python} top_movies.iloc[1].title`**
+
+`{python} top_movies.iloc[1].overview`
+
+## Number 1
+
+**`{python} top_movies.iloc[0].title`**
+
+`{python} top_movies.iloc[0].overview`
